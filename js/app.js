@@ -6,8 +6,20 @@ Array.prototype.pick = function() {
   return this[Math.floor(Math.random()*this.length)];
 };
 
+function isBlacklisted(string) {
+  for (var i=0;i<blacklist.length;i++) {
+    if (string.toLowerCase().indexOf(blacklist[i]) >= 0) {
+      return true;
+    }
+  }
+  return false;
+}
+
 function generate(noun, verb) {
   noun = noun || nouns.pick().singularize();
+  while (isBlacklisted(noun)) {
+    noun = nouns.pick().singularize();
+  }
   var f = noun.charAt(0);
   var vowel = false;
   if (f === 'a' || f === 'e' || f === 'i' || f ==='o' || f ==='u') {
