@@ -39,8 +39,8 @@ function generate(noun, verb) {
     ].pick()
     var a = 'a';
     if (vowel) { a = 'an'; }
-    var generatedText = person + ', you must be ' + a + ' '  + noun + ' because you are ' + def;
-    var sharedText = person + ', you must be ' + a + ' ' + noun + ' because you are ' + def;
+    var generatedText = noun + ': ' + def;
+    var sharedText = generatedText;
     $('#content').html(generatedText);
     var shareUrl = window.location.href;
     $('#share').attr('href', shareUrl);
