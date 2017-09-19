@@ -35,7 +35,8 @@ function generate(noun, verb) {
     def = def.charAt(0).toLowerCase() + def.slice(1);
     var person = [
       'Girl',
-      'Boy'
+      'Boy',
+      'Enby'
     ].pick()
     var a = 'a';
     if (vowel) { a = 'an'; }
